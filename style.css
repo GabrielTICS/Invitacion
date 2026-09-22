@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #030712; /* Fondo oscuro donde van las imágenes flotantes 3D */
+    background-color: #030712; /* Fondo oscuro donde flotan los personajes */
     color: #1e293b;
     display: flex;
     justify-content: center;
@@ -18,27 +18,28 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D GIGANTES FLOTANTES EN LOS LATERALES --- */
+/* --- PERSONAJES 3D GIGANTES EN LOS LATERALES --- */
 .side-character-3d {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
     pointer-events: none;
-    display: none; /* Se activa en pantallas grandes de laptop / PC */
+    display: none; /* Se activa automáticamente en pantallas anchas (laptops / PC) */
 }
 
 .left-3d {
-    left: -20px;
+    left: 20px;
 }
 
 .right-3d {
-    right: -20px;
+    right: 20px;
 }
 
 .img-3d {
     height: 480px;
     width: auto;
+    max-width: 280px;
     object-fit: contain;
     filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
     animation: float3D 4s infinite ease-in-out alternate;
@@ -49,7 +50,7 @@ body {
     100% { transform: translateY(-15px) rotate(1deg); }
 }
 
-/* --- CONTENEDOR PRINCIPAL DE LA TARJETA --- */
+/* --- TARJETA PRINCIPAL --- */
 .card-container {
     position: relative;
     z-index: 10;
@@ -64,42 +65,12 @@ body {
     border: 4px solid #38bdf8;
 }
 
-/* --- BANNER DE AVISO / CAMBIO DE PLANES (ARRIBA DE TODO) --- */
-.notice-banner {
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
-    color: #ffffff;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-align: center;
-    border-bottom: 3px solid #b91c1c;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.notice-icon {
-    font-size: 1.6rem;
-}
-
-.notice-text strong {
-    display: block;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
-.notice-text p {
-    font-size: 0.95rem;
-    margin-top: 2px;
-    opacity: 0.95;
-}
-
 /* --- ENCABEZADO --- */
 .header-banner {
     background: linear-gradient(135deg, #0284c7 0%, #0d9488 50%, #ea580c 100%);
     color: #ffffff;
     text-align: center;
-    padding: 24px 20px;
+    padding: 28px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,7 +282,7 @@ body {
     transform: translateY(1px);
 }
 
-/* --- RESPONSIVO PARA PANTALLAS ANCHAS --- */
+/* --- RESPONSIVO --- */
 @media (min-width: 768px) {
     .invitation-split {
         flex-direction: row;
@@ -323,7 +294,7 @@ body {
     }
 }
 
-/* MUESTRA LOS PERSONAJES 3D EN MONITOR / LAPTOP */
+/* MUESTRA LAS IMÁGENES 3D EN MONITORES / LAPTOPS */
 @media (min-width: 1250px) {
     .side-character-3d {
         display: block;
