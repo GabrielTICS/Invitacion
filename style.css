@@ -26,11 +26,11 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D CENTRADOS VERTICALMENTE EN LOS COSTADOS --- */
+/* --- PERSONAJES 3D CENTRADOS BAJADOS Y ALINEADOS --- */
 .side-character-3d {
     position: fixed;
-    top: 55%; /* Se bajan para dar espacio al rostro */
-    transform: translateY(-50%);
+    top: 50% !important; /* Centrado vertical exacto en pantalla */
+    transform: translateY(-50%) !important;
     z-index: 5;
     pointer-events: none;
     display: none; /* Se activa en pantallas de laptop / PC */
@@ -45,21 +45,25 @@ body {
     right: 15px;
 }
 
-/* Control estricto de altura para que quepan completas en pantalla */
+/* Control estricto de altura para que quepan completas */
 .img-3d {
-    height: 70vh; /* Ajuste óptimo para ver desde la cabeza hasta los pies */
-    max-height: 520px;
+    height: 65vh; /* Altura ideal ajustada para ver rostros y cuerpo completo */
+    max-height: 480px;
     width: auto;
-    max-width: 320px;
+    max-width: 300px;
     object-fit: contain;
     filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
-    animation: floatCentered 4s infinite ease-in-out alternate;
+    animation: floatSmooth 3.5s infinite ease-in-out alternate;
 }
 
-/* Animación de flotación suave sin mover la posición vertical base */
-@keyframes floatCentered {
-    0% { transform: scale(1) translateY(0); }
-    100% { transform: scale(1.02) translateY(-8px); }
+/* Animación de flotación limpia sin alterar la posición vertical */
+@keyframes floatSmooth {
+    0% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* --- TARJETA PRINCIPAL --- */
