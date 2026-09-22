@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Fiesta Bajo el Mar y en el Océano! | Camila & Regina</title>
+    <!-- Fuentes Temáticas desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GENERALES Y RESET --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #0b1d3a;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 850px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- ENCABEZADO --- */
+        .header-banner {
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .header-banner h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-banner p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        /* --- SECCIÓN PRINCIPAL: 2 TEMAS --- */
+        .invitation-split {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .invitation-split {
+                flex-direction: row;
+            }
+        }
+
+        .theme-section {
+            flex: 1;
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        /* TEMA ARIEL (CAMILA) */
+        .ariel-theme {
+            background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-bottom: 4px solid #00acc1;
+        }
+
+        @media (min-width: 768px) {
+            .ariel-theme {
+                border-bottom: none;
+                border-right: 2px dashed #4dd0e1;
+            }
+        }
+
+        .ariel-theme .name {
+            font-family: 'Pacifico', cursive;
+            color: #00838f;
+            font-size: 2.3rem;
+            margin-bottom: 5px;
+        }
+
+        .ariel-theme .badge {
+            background-color: #e91e63;
+            color: white;
+        }
+
+        /* TEMA MOANA (REGINA) */
+        .moana-theme {
+            background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .moana-theme .name {
+            font-family: 'Pacifico', cursive;
+            color: #e65100;
+            font-size: 2.3rem;
+            margin-bottom: 5px;
+        }
+
+        .moana-theme .badge {
+            background-color: #2e7d32;
+            color: white;
+        }
+
+        /* ELEMNTOS DE DETALLE */
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .details-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 15px;
+            width: 100%;
+            margin: 15px 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .details-box p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .details-box strong {
+            color: #111;
+        }
+
+        /* --- DATOS GENERALES --- */
+        .general-info {
+            background: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 2px dashed #b0bec5;
+        }
+
+        .info-card {
+            display: inline-block;
+            background: #f1f8e9;
+            border: 2px solid #81c784;
+            border-radius: 16px;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* --- BOTONES DE INTERACCIÓN --- */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .btn-confirm {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .btn-ariel {
+            background: linear-gradient(135deg, #00bcd4, #00838f);
+        }
+
+        .btn-ariel:hover {
+            background: linear-gradient(135deg, #26c6da, #006064);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,188,212,0.4);
+        }
+
+        .btn-moana {
+            background: linear-gradient(135deg, #ff9800, #e65100);
+        }
+
+        .btn-moana:hover {
+            background: linear-gradient(135deg, #ffa726, #bf360c);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,152,0,0.4);
+        }
+
+        .btn-confirm:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Encabezado de la invitación -->
+        <header class="header-banner">
+            <h1>¡Una Gran Aventura Doble!</h1>
+            <p>Acompañanos a celebrar los cumpleaños de nuestras princesas 🧜‍♀️🌀</p>
+        </header>
+
+        <!-- Secciones Temáticas -->
+        <div class="invitation-split">
+            
+            <!-- Tema Ariel: Camila -->
+            <section class="theme-section ariel-theme">
+                <div>
+                    <span class="badge">Tema: La Sirenita 🧜‍♀️</span>
+                    <h2 class="name">Camila</h2>
+                    <p><strong>¡Cumple 4 Años! 🎉</strong></p>
+                </div>
+                
+                <div class="details-box">
+                    <p>👗 <strong>Talla de ropa:</strong> 5 - 6 años</p>
+                    <p>⏰ <strong>Hora:</strong> 1:00 PM</p>
+                    <p>🌊 <em>"Un mar de diversión te espera"</em></p>
+                </div>
+            </section>
+
+            <!-- Tema Moana: Regina -->
+            <section class="theme-section moana-theme">
+                <div>
+                    <span class="badge">Tema: Moana 🌀</span>
+                    <h2 class="name">Regina</h2>
+                    <p><strong>¡Cumple 2 Años! 🌺</strong></p>
+                </div>
+
+                <div class="details-box">
+                    <p>👗 <strong>Talla de ropa:</strong> 18 - 24 meses</p>
+                    <p>⏰ <strong>Hora:</strong> 1:00 PM</p>
+                    <p>⛵ <em>"El océano nos llama a festejar"</em></p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Ubicación y Fecha General -->
+        <footer class="general-info">
+            <div class="info-card">
+                <h3>📍 LUGAR Y FECHA 📅</h3>
+                <p><strong>Día:</strong> Sábado, 03 de Octubre</p>
+                <p><strong>Dirección:</strong> Palapa Alberca Oasis</p>
+            </div>
+
+            <!-- Botones Interactivos de Confirmación -->
+            <div class="buttons-container">
+                <button class="btn-confirm btn-ariel" onclick="confirmarAsistencia('Camila')">
+                    🧜‍♀️ Confirmar para el Cumple de Camila
+                </button>
+                <button class="btn-confirm btn-moana" onclick="confirmarAsistencia('Regina')">
+                    🌀 Confirmar para el Cumple de Regina
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script de Interacción con WhatsApp -->
+    <script>
+        function confirmarAsistencia(nombre) {
+            const numeroTelefono = "529171071820"; // Código de país México (+52) + número
+            let mensaje = "";
+
+            if (nombre === 'Camila') {
+                mensaje = "¡Hola! 🧜‍♀️🌊✨ ¡Qué emoción! Confirmo con mucho entusiasmo mi asistencia al cumpleaños #4 de *Camila* 🎂🎉. ¡Listos para sumergirnos en la diversión el 3 de Octubre en Palapa Alberca Oasis! 🐠🎈";
+            } else if (nombre === 'Regina') {
+                mensaje = "¡Hola! 🌺🌀⛵ ¡Qué alegría! Confirmo totalmente mi asistencia al cumpleaños #2 de *Regina* 🥥🎉. ¡Estamos listos para esta gran aventura el 3 de Octubre en Palapa Alberca Oasis! 🌊🌴";
+            }
+
+            // Codificar el mensaje para URL de WhatsApp
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
+
+            // Abrir el enlace en una nueva pestaña
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
