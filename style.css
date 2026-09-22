@@ -1,4 +1,4 @@
-/* --- RESET Y FUENTES --- */
+/* --- RESET Y CONFIGURACIÓN GENERAL --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +7,10 @@
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background: #081226;
-    color: #333;
+    background: #030712;
+    background-image: radial-gradient(#1e293b 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #1e293b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +21,10 @@ body {
 /* --- CONTENEDOR PRINCIPAL --- */
 .card-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     background: #ffffff;
-    border-radius: 28px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 32px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -34,23 +36,30 @@ body {
     background: linear-gradient(135deg, #0284c7 0%, #0d9488 50%, #ea580c 100%);
     color: #ffffff;
     text-align: center;
-    padding: 35px 20px;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: relative;
-    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
 .header-banner h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-size: 2.4rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .header-banner p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 600;
     opacity: 0.95;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-decor {
+    font-size: 2rem;
 }
 
 /* --- DIVISIÓN DE SECCIONES --- */
@@ -61,137 +70,193 @@ body {
 
 .theme-section {
     flex: 1;
-    padding: 35px 22px;
+    padding: 30px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    overflow: hidden;
 }
 
-/* 🧜‍♀️ TEMA ARIEL / SIRENITA (CAMILA) */
+/* IMÁGENES DE PERSONAJES */
+.character-wrapper {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.character-img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.character-img:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.content-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🧜‍♀️ TEMA ARIEL (CAMILA) */
 .ariel-theme {
-    background: radial-gradient(circle at top, #a5f3fc 0%, #38bdf8 50%, #0284c7 100%);
-    border-bottom: 5px solid #a855f7;
+    background: radial-gradient(circle at top, #bae6fd 0%, #38bdf8 50%, #0284c7 100%);
+    border-bottom: 6px solid #a855f7;
+    position: relative;
+}
+
+.ariel-theme::before {
+    content: "🫧";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 2rem;
+    opacity: 0.5;
 }
 
 .ariel-theme .name {
     font-family: 'Pacifico', cursive;
-    color: #4c1d95; /* Violeta sirena */
-    font-size: 2.7rem;
-    margin-bottom: 5px;
-    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0,0,0,0.15);
+    color: #4c1d95; /* Violeta Sirena */
+    font-size: 2.8rem;
+    margin: 5px 0;
+    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ariel-theme .age-tag {
-    color: #e11d48; /* Rojo brillante Ariel */
+    color: #dc2626; /* Rojo Cabello Ariel */
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 .ariel-theme .badge {
-    background: linear-gradient(135deg, #9333ea, #c084fc);
+    background: linear-gradient(135deg, #7e22ce, #a855f7);
     color: #ffffff;
     border: 2px solid #ffffff;
 }
 
 .ariel-theme .details-box {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.9);
     border: 2px solid #7dd3fc;
-    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3);
 }
 
 /* 🌺 TEMA MOANA (REGINA) */
 .moana-theme {
     background: radial-gradient(circle at top, #fef08a 0%, #fbd55d 40%, #fb923c 100%);
+    position: relative;
+}
+
+.moana-theme::before {
+    content: "🌴";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    opacity: 0.6;
 }
 
 .moana-theme .name {
     font-family: 'Pacifico', cursive;
-    color: #9a3412; /* Terracota / Caoba Moana */
-    font-size: 2.7rem;
-    margin-bottom: 5px;
-    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0,0,0,0.15);
+    color: #7c2d12; /* Terracota / Madera Moana */
+    font-size: 2.8rem;
+    margin: 5px 0;
+    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .moana-theme .age-tag {
     color: #b91c1c;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 .moana-theme .badge {
-    background: linear-gradient(135deg, #15803d, #4ade80);
+    background: linear-gradient(135deg, #15803d, #22c55e);
     color: #ffffff;
     border: 2px solid #ffffff;
 }
 
 .moana-theme .details-box {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.9);
     border: 2px solid #fde047;
-    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.25);
+    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
 }
 
-/* --- DETALLES Y CAJAS DE INFORMACIÓN --- */
+/* CAJAS Y BADGES */
 .badge {
     display: inline-block;
-    padding: 7px 18px;
+    padding: 8px 20px;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .details-box {
-    border-radius: 20px;
-    padding: 18px;
+    border-radius: 22px;
+    padding: 20px;
     width: 100%;
-    margin: 18px 0;
+    margin-top: 15px;
     backdrop-filter: blur(8px);
 }
 
 .details-box p {
     margin: 8px 0;
     font-size: 1rem;
-    color: #1e293b;
+    color: #0f172a;
 }
 
-.details-box strong {
-    color: #0f172a;
+.details-box .quote {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 10px;
 }
 
 /* --- SECCIÓN INFERIOR Y UBICACIÓN --- */
 .general-info {
     background: #ffffff;
-    padding: 28px 20px;
+    padding: 30px 20px;
     text-align: center;
-    border-top: 3px dashed #cbd5e1;
+    border-top: 4px dashed #cbd5e1;
 }
 
 .info-card {
     display: inline-block;
     background: #f0fdf4;
     border: 2px solid #86efac;
-    border-radius: 20px;
-    padding: 18px 30px;
-    margin-bottom: 22px;
-    box-shadow: 0 6px 16px rgba(22, 101, 52, 0.08);
+    border-radius: 24px;
+    padding: 20px 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.1);
 }
 
 .info-card h3 {
     color: #15803d;
-    margin-bottom: 8px;
-    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.info-card p {
+    font-size: 1.05rem;
+    color: #1e293b;
+    margin: 4px 0;
 }
 
 /* --- BOTONES DE CONFIRMACIÓN --- */
 .buttons-container {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    max-width: 480px;
+    gap: 15px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -199,18 +264,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 16px 22px;
+    gap: 12px;
+    padding: 16px 24px;
     font-family: 'Fredoka', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-    transition: all 0.25 ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
 }
 
 .btn-ariel {
@@ -220,26 +284,26 @@ body {
 
 .btn-ariel:hover {
     background: linear-gradient(135deg, #6b21a8, #0369a1);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(126, 34, 206, 0.45);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(126, 34, 206, 0.45);
 }
 
 .btn-moana {
-    background: linear-gradient(135deg, #ea580c, #15803d);
+    background: linear-gradient(135deg, #ea580c, #166534);
     border: 2px solid #fde047;
 }
 
 .btn-moana:hover {
-    background: linear-gradient(135deg, #c2410c, #166534);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(234, 88, 12, 0.45);
+    background: linear-gradient(135deg, #c2410c, #14532d);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(234, 88, 12, 0.45);
 }
 
 .btn-confirm:active {
     transform: translateY(1px);
 }
 
-/* --- ADAPTACIÓN RESPONSIVA (PANTALLAS GRANDES) --- */
+/* --- RESPONSIVO PARA PC / TABLETS --- */
 @media (min-width: 768px) {
     .invitation-split {
         flex-direction: row;
@@ -247,6 +311,10 @@ body {
 
     .ariel-theme {
         border-bottom: none;
-        border-right: 4px solid #ffffff;
+        border-right: 5px solid #ffffff;
+    }
+
+    .character-wrapper {
+        height: 220px;
     }
 }
