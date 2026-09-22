@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background: #030712; /* Fondo oscuro exterior */
+    background-color: #030712; /* Fondo oscuro exterior */
     color: #1e293b;
     display: flex;
     justify-content: center;
@@ -18,17 +18,14 @@ body {
     overflow-x: hidden;
 }
 
-/* --- ELEMENTOS DE LOS PERSONAJES EN LOS LATERALES OSCUROS DE LA PANTALLA --- */
+/* --- TARJETAS DE PERSONAJES FLOTANTES EN LOS LATERALES (ZONA OSCURA) --- */
 .side-character {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    width: 150px;
-    height: 180px;
-    z-index: 0;
+    z-index: 10;
     pointer-events: none;
-    display: none; /* Se activa en pantallas medianas y grandes */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+    display: none; /* Se activa en pantallas de PC / Laptops */
 }
 
 .left-character {
@@ -39,6 +36,41 @@ body {
 .right-character {
     right: 20px;
     animation: floatRight 3s infinite ease-in-out alternate;
+}
+
+.character-card {
+    width: 140px;
+    height: 180px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.ariel-card {
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.85), rgba(2, 132, 199, 0.85));
+    border: 3px solid #c084fc;
+}
+
+.moana-card {
+    background: linear-gradient(135deg, rgba(234, 88, 12, 0.85), rgba(21, 128, 61, 0.85));
+    border: 3px solid #fde047;
+}
+
+.character-avatar {
+    font-size: 4rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.character-card h3 {
+    color: #ffffff;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes floatLeft {
@@ -59,7 +91,7 @@ body {
     max-width: 850px;
     background: #ffffff;
     border-radius: 32px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -94,7 +126,7 @@ body {
     font-size: 2.2rem;
 }
 
-/* --- DIVISIÓN DE SECCIONES DE TEMA --- */
+/* --- SECCIONES TEMÁTICAS --- */
 .invitation-split {
     display: flex;
     flex-direction: column;
@@ -283,7 +315,7 @@ body {
     transform: translateY(1px);
 }
 
-/* --- ADAPTACIÓN RESPONSIVA PARA PANTALLAS MEDIANAS Y DE ESCRITORIO --- */
+/* --- RESPONSIVO --- */
 @media (min-width: 768px) {
     .invitation-split {
         flex-direction: row;
@@ -293,16 +325,11 @@ body {
         border-bottom: none;
         border-right: 5px solid #ffffff;
     }
-
-    /* Activa los elementos flotantes a los lados en pantallas anchas */
-    .side-character {
-        display: block;
-    }
 }
 
+/* MOSTRAR PERSONAJES LATERALES EN PANTALLAS ANCHAS DE PC */
 @media (min-width: 1200px) {
     .side-character {
-        width: 180px;
-        height: 220px;
+        display: block;
     }
 }
