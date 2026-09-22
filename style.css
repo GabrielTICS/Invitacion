@@ -7,7 +7,9 @@
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #030712; /* Fondo oscuro donde flotan los personajes */
+    /* FONDO LLAMATIVO Y FESTIVO DEGRADADO TROPICAL/MARINO */
+    background: linear-gradient(135deg, #0284c7 0%, #06b6d4 35%, #f97316 70%, #ea580c 100%);
+    background-attachment: fixed;
     color: #1e293b;
     display: flex;
     justify-content: center;
@@ -18,14 +20,14 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D GIGANTES EN LOS LATERALES --- */
+/* --- PERSONAJES 3D EN LOS LATERALES --- */
 .side-character-3d {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
     pointer-events: none;
-    display: none; /* Se activa automáticamente en pantallas anchas (laptops / PC) */
+    display: none; /* Se activa en pantallas de PC / Laptops */
 }
 
 .left-3d {
@@ -41,13 +43,13 @@ body {
     width: auto;
     max-width: 280px;
     object-fit: contain;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
     animation: float3D 4s infinite ease-in-out alternate;
 }
 
 @keyframes float3D {
-    0% { transform: translateY(0px) rotate(-1deg); }
-    100% { transform: translateY(-15px) rotate(1deg); }
+    0% { transform: translateY(-50%) rotate(-1deg); }
+    100% { transform: translateY(-53%) rotate(1deg); }
 }
 
 /* --- TARJETA PRINCIPAL --- */
@@ -58,11 +60,11 @@ body {
     max-width: 850px;
     background: #ffffff;
     border-radius: 32px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    border: 4px solid #38bdf8;
+    border: 5px solid #ffffff;
 }
 
 /* --- ENCABEZADO --- */
@@ -294,7 +296,7 @@ body {
     }
 }
 
-/* MUESTRA LAS IMÁGENES 3D EN MONITORES / LAPTOPS */
+/* MUESTRA LAS IMÁGENES EN MONITORES O LAPTOPS */
 @media (min-width: 1250px) {
     .side-character-3d {
         display: block;
