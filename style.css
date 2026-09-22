@@ -1,4 +1,4 @@
-/* --- RESET Y CONFIGURACIÓN BASE --- */
+/* --- RESET Y FUENTES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #0b1d3a;
+    background: #081226;
     color: #333;
     display: flex;
     justify-content: center;
@@ -19,38 +19,41 @@ body {
 /* --- CONTENEDOR PRINCIPAL --- */
 .card-container {
     width: 100%;
-    max-width: 850px;
+    max-width: 900px;
     background: #ffffff;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 28px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border: 4px solid #38bdf8;
 }
 
 /* --- ENCABEZADO --- */
 .header-banner {
-    background: linear-gradient(135deg, #00b4db, #0083b0);
+    background: linear-gradient(135deg, #0284c7 0%, #0d9488 50%, #ea580c 100%);
     color: #ffffff;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
     position: relative;
+    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.15);
 }
 
 .header-banner h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header-banner p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* --- SECCIÓN PRINCIPAL: DIVISIÓN DE TEMAS --- */
+/* --- DIVISIÓN DE SECCIONES --- */
 .invitation-split {
     display: flex;
     flex-direction: column;
@@ -58,111 +61,137 @@ body {
 
 .theme-section {
     flex: 1;
-    padding: 30px 20px;
+    padding: 35px 22px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    transition: transform 0.3s ease;
 }
 
-/* --- TEMA ARIEL (CAMILA) --- */
+/* 🧜‍♀️ TEMA ARIEL / SIRENITA (CAMILA) */
 .ariel-theme {
-    background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 100%);
-    border-bottom: 4px solid #00acc1;
+    background: radial-gradient(circle at top, #a5f3fc 0%, #38bdf8 50%, #0284c7 100%);
+    border-bottom: 5px solid #a855f7;
 }
 
 .ariel-theme .name {
     font-family: 'Pacifico', cursive;
-    color: #00838f;
-    font-size: 2.3rem;
+    color: #4c1d95; /* Violeta sirena */
+    font-size: 2.7rem;
     margin-bottom: 5px;
+    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0,0,0,0.15);
+}
+
+.ariel-theme .age-tag {
+    color: #e11d48; /* Rojo brillante Ariel */
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .ariel-theme .badge {
-    background-color: #e91e63;
-    color: white;
+    background: linear-gradient(135deg, #9333ea, #c084fc);
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
-/* --- TEMA MOANA (REGINA) --- */
+.ariel-theme .details-box {
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid #7dd3fc;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+}
+
+/* 🌺 TEMA MOANA (REGINA) */
 .moana-theme {
-    background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%);
+    background: radial-gradient(circle at top, #fef08a 0%, #fbd55d 40%, #fb923c 100%);
 }
 
 .moana-theme .name {
     font-family: 'Pacifico', cursive;
-    color: #e65100;
-    font-size: 2.3rem;
+    color: #9a3412; /* Terracota / Caoba Moana */
+    font-size: 2.7rem;
     margin-bottom: 5px;
+    text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(0,0,0,0.15);
+}
+
+.moana-theme .age-tag {
+    color: #b91c1c;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .moana-theme .badge {
-    background-color: #2e7d32;
-    color: white;
+    background: linear-gradient(135deg, #15803d, #4ade80);
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
-/* --- DETALLES E ETIQUETAS --- */
+.moana-theme .details-box {
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid #fde047;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.25);
+}
+
+/* --- DETALLES Y CAJAS DE INFORMACIÓN --- */
 .badge {
     display: inline-block;
-    padding: 6px 16px;
+    padding: 7px 18px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .details-box {
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 16px;
-    padding: 15px;
+    border-radius: 20px;
+    padding: 18px;
     width: 100%;
-    margin: 15px 0;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 18px 0;
+    backdrop-filter: blur(8px);
 }
 
 .details-box p {
-    margin: 6px 0;
-    font-size: 0.95rem;
-    color: #444;
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #1e293b;
 }
 
 .details-box strong {
-    color: #111;
+    color: #0f172a;
 }
 
-/* --- INFORMACIÓN GENERAL Y UBICACIÓN --- */
+/* --- SECCIÓN INFERIOR Y UBICACIÓN --- */
 .general-info {
     background: #ffffff;
-    padding: 25px 20px;
+    padding: 28px 20px;
     text-align: center;
-    border-top: 2px dashed #b0bec5;
+    border-top: 3px dashed #cbd5e1;
 }
 
 .info-card {
     display: inline-block;
-    background: #f1f8e9;
-    border: 2px solid #81c784;
-    border-radius: 16px;
-    padding: 15px 25px;
-    margin-bottom: 20px;
+    background: #f0fdf4;
+    border: 2px solid #86efac;
+    border-radius: 20px;
+    padding: 18px 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 16px rgba(22, 101, 52, 0.08);
 }
 
 .info-card h3 {
-    color: #2e7d32;
+    color: #15803d;
     margin-bottom: 8px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
-/* --- BOTONES DE CONFIRMACIÓN INTERACTIVOS --- */
+/* --- BOTONES DE CONFIRMACIÓN --- */
 .buttons-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-width: 450px;
+    gap: 14px;
+    max-width: 480px;
     margin: 0 auto;
 }
 
@@ -171,44 +200,46 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 20px;
+    padding: 16px 22px;
     font-family: 'Fredoka', sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.2s ease-in-out;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    transition: all 0.25 ease;
 }
 
 .btn-ariel {
-    background: linear-gradient(135deg, #00bcd4, #00838f);
+    background: linear-gradient(135deg, #7e22ce, #0284c7);
+    border: 2px solid #c084fc;
 }
 
 .btn-ariel:hover {
-    background: linear-gradient(135deg, #26c6da, #006064);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+    background: linear-gradient(135deg, #6b21a8, #0369a1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(126, 34, 206, 0.45);
 }
 
 .btn-moana {
-    background: linear-gradient(135deg, #ff9800, #e65100);
+    background: linear-gradient(135deg, #ea580c, #15803d);
+    border: 2px solid #fde047;
 }
 
 .btn-moana:hover {
-    background: linear-gradient(135deg, #ffa726, #bf360c);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+    background: linear-gradient(135deg, #c2410c, #166534);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(234, 88, 12, 0.45);
 }
 
 .btn-confirm:active {
     transform: translateY(1px);
 }
 
-/* --- DISEÑO RESPONSIVO (PANTALLAS MEDIANAS Y GRANDES) --- */
+/* --- ADAPTACIÓN RESPONSIVA (PANTALLAS GRANDES) --- */
 @media (min-width: 768px) {
     .invitation-split {
         flex-direction: row;
@@ -216,6 +247,6 @@ body {
 
     .ariel-theme {
         border-bottom: none;
-        border-right: 2px dashed #4dd0e1;
+        border-right: 4px solid #ffffff;
     }
 }
