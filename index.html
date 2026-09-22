@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- Animación de Burbujas de Fondo -->
+    <!-- Animación de Burbujas de Fondo General -->
     <div class="bubbles-bg">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -24,24 +24,30 @@
     <div class="card-container">
         <!-- Banner Encabezado -->
         <header class="header-banner">
-            <span class="decor-left">🧜‍♀️</span>
+            <span class="decor-icon">🧜‍♀️</span>
             <div>
                 <h1>¡Una Gran Aventura Doble!</h1>
                 <p>Acompáñanos a celebrar los cumpleaños de nuestras princesas</p>
             </div>
-            <span class="decor-right">🌺</span>
+            <span class="decor-icon">🌺</span>
         </header>
 
-        <!-- Sección Dividida con Fondos Temáticos -->
+        <!-- Sección Dividida con Diseños Temáticos Directos -->
         <div class="invitation-split">
             
             <!-- LADO ARIEL: CAMILA -->
             <section class="theme-section ariel-theme">
-                <div class="bg-overlay"></div>
-                <div class="character-box">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=400&auto=format&fit=crop" alt="Ariel Bajo el Mar" class="hero-avatar ariel-avatar">
+                <!-- Ilustración SVG Nativa: Cola de Sirena / Ariel -->
+                <div class="svg-character-container">
+                    <svg class="theme-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 15 C30 35 20 60 25 85 C35 75 45 70 50 80 C55 70 65 75 75 85 C80 60 70 35 50 15 Z" fill="#22c55e" opacity="0.85"/>
+                        <path d="M25 85 C15 90 10 80 20 70 C30 75 35 80 25 85 Z" fill="#16a34a"/>
+                        <path d="M75 85 C85 90 90 80 80 70 C70 75 65 80 75 85 Z" fill="#16a34a"/>
+                        <circle cx="35" cy="30" r="10" fill="#a855f7" opacity="0.9"/>
+                        <circle cx="65" cy="30" r="10" fill="#a855f7" opacity="0.9"/>
+                    </svg>
                 </div>
-                
+
                 <div class="card-content">
                     <span class="badge badge-ariel">🧜‍♀️ Tema: La Sirenita 🐚</span>
                     <h2 class="name name-ariel">Camila</h2>
@@ -57,9 +63,20 @@
 
             <!-- LADO MOANA: REGINA -->
             <section class="theme-section moana-theme">
-                <div class="bg-overlay"></div>
-                <div class="character-box">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop" alt="Moana Océano Tropical" class="hero-avatar moana-avatar">
+                <!-- Ilustración SVG Nativa: Flor de Hibiscus y Sol Polinesio -->
+                <div class="svg-character-container">
+                    <svg class="theme-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="20" fill="#facc15"/>
+                        <path d="M50 10 C45 25 55 25 50 10 Z" fill="#ef4444"/>
+                        <path d="M50 90 C45 75 55 75 50 90 Z" fill="#ef4444"/>
+                        <path d="M10 50 C25 45 25 55 10 50 Z" fill="#ef4444"/>
+                        <path d="M90 50 C75 45 75 55 90 50 Z" fill="#ef4444"/>
+                        <path d="M22 22 C35 30 30 40 22 22 Z" fill="#f97316"/>
+                        <path d="M78 78 C65 70 70 60 78 78 Z" fill="#f97316"/>
+                        <path d="M22 78 C35 70 30 60 22 78 Z" fill="#f97316"/>
+                        <path d="M78 22 C65 30 70 40 78 22 Z" fill="#f97316"/>
+                        <circle cx="50" cy="50" r="8" fill="#7c2d12"/>
+                    </svg>
                 </div>
 
                 <div class="card-content">
