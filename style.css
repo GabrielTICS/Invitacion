@@ -26,39 +26,40 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D CENTRADOS Y MÁS GRANDES EN LOS LATERALES --- */
+/* --- PERSONAJES 3D CENTRADOS VERTICALMENTE EN LOS COSTADOS --- */
 .side-character-3d {
     position: fixed;
-    top: 50%;
+    top: 55%; /* Se bajan para dar espacio al rostro */
     transform: translateY(-50%);
     z-index: 5;
     pointer-events: none;
     display: none; /* Se activa en pantallas de laptop / PC */
 }
 
-/* Posicionamiento lateral perfecto en los costados */
+/* Posicionamiento a los extremos */
 .left-3d {
-    left: 10px;
+    left: 15px;
 }
 
 .right-3d {
-    right: 10px;
+    right: 15px;
 }
 
-/* Imágenes más grandes y totalmente centradas */
+/* Control estricto de altura para que quepan completas en pantalla */
 .img-3d {
-    height: 85vh; /* Aumenta el tamaño vertical al 85% de la pantalla */
+    height: 70vh; /* Ajuste óptimo para ver desde la cabeza hasta los pies */
+    max-height: 520px;
     width: auto;
-    max-width: 380px; /* Ancho máximo para que no tapen la tarjeta */
+    max-width: 320px;
     object-fit: contain;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
     animation: floatCentered 4s infinite ease-in-out alternate;
 }
 
-/* Animación de flotación centrada suave */
+/* Animación de flotación suave sin mover la posición vertical base */
 @keyframes floatCentered {
     0% { transform: scale(1) translateY(0); }
-    100% { transform: scale(1.03) translateY(-10px); }
+    100% { transform: scale(1.02) translateY(-8px); }
 }
 
 /* --- TARJETA PRINCIPAL --- */
@@ -305,7 +306,7 @@ body {
     }
 }
 
-/* MUESTRA LAS IMÁGENES EN MONITORES O LAPTOPS */
+/* MOSTRAR EN MONITORES / LAPTOPS */
 @media (min-width: 1200px) {
     .side-character-3d {
         display: block;
