@@ -21,13 +21,13 @@ function confirmarAsistencia(nombre) {
     window.open(urlWhatsApp, '_blank');
 }
 
-// Efecto interactivo adicional al hacer clic en cualquier botón
+// Efecto interactivo adicional al hacer clic en los botones
 document.addEventListener('DOMContentLoaded', () => {
     const botones = document.querySelectorAll('.btn-confirm');
 
     botones.forEach(boton => {
         boton.addEventListener('click', function () {
-            // Breve feedback visual al hacer clic
+            // Breve feedback visual al pulsar
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = '';
