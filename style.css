@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-/* FONDO TROPICAL Y MARINO VIVO (FORZADO SIN OSCURIDAD) */
+/* FONDO TROPICAL Y MARINO VIVO */
 html {
     background: linear-gradient(135deg, #0284c7 0%, #06b6d4 35%, #f97316 70%, #ea580c 100%) !important;
     background-attachment: fixed !important;
@@ -26,37 +26,39 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D EN LOS LATERALES --- */
+/* --- PERSONAJES 3D CENTRADOS Y MÁS GRANDES EN LOS LATERALES --- */
 .side-character-3d {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
     pointer-events: none;
-    display: none; /* Se activa en pantallas de PC / Laptops */
+    display: none; /* Se activa en pantallas de laptop / PC */
 }
 
+/* Posicionamiento lateral perfecto en los costados */
 .left-3d {
-    left: 20px;
+    left: 10px;
 }
 
 .right-3d {
-    right: 20px;
+    right: 10px;
 }
 
+/* Imágenes más grandes y totalmente centradas */
 .img-3d {
-    height: 480px;
+    height: 85vh; /* Aumenta el tamaño vertical al 85% de la pantalla */
     width: auto;
-    max-width: 280px;
+    max-width: 380px; /* Ancho máximo para que no tapen la tarjeta */
     object-fit: contain;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
-    animation: float3D 4s infinite ease-in-out alternate;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+    animation: floatCentered 4s infinite ease-in-out alternate;
 }
 
-/* Animación corregida para no tapar el fondo */
-@keyframes float3D {
-    0% { transform: scale(1) rotate(-1deg); }
-    100% { transform: scale(1.03) rotate(1deg); }
+/* Animación de flotación centrada suave */
+@keyframes floatCentered {
+    0% { transform: scale(1) translateY(0); }
+    100% { transform: scale(1.03) translateY(-10px); }
 }
 
 /* --- TARJETA PRINCIPAL --- */
@@ -64,7 +66,7 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 850px;
+    max-width: 820px;
     background: #ffffff;
     border-radius: 32px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
@@ -304,7 +306,7 @@ body {
 }
 
 /* MUESTRA LAS IMÁGENES EN MONITORES O LAPTOPS */
-@media (min-width: 1250px) {
+@media (min-width: 1200px) {
     .side-character-3d {
         display: block;
     }
