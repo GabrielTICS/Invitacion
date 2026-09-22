@@ -5,7 +5,6 @@
     padding: 0;
 }
 
-/* FONDO TROPICAL Y MARINO VIVO */
 html {
     background: linear-gradient(135deg, #0284c7 0%, #06b6d4 35%, #f97316 70%, #ea580c 100%) !important;
     background-attachment: fixed !important;
@@ -26,44 +25,31 @@ body {
     overflow-x: hidden;
 }
 
-/* --- PERSONAJES 3D CENTRADOS BAJADOS Y ALINEADOS --- */
+/* --- PERSONAJES 3D POSICIONADOS ABAJO A LOS LATERALES --- */
 .side-character-3d {
     position: fixed;
-    top: 50% !important; /* Centrado vertical exacto en pantalla */
-    transform: translateY(-50%) !important;
+    bottom: 20px !important; /* Fuerza a que se alineen abajo */
+    top: auto !important;
     z-index: 5;
     pointer-events: none;
-    display: none; /* Se activa en pantallas de laptop / PC */
+    display: none;
 }
 
-/* Posicionamiento a los extremos */
 .left-3d {
-    left: 15px;
+    left: 20px;
 }
 
 .right-3d {
-    right: 15px;
+    right: 20px;
 }
 
-/* Control estricto de altura para que quepan completas */
 .img-3d {
-    height: 65vh; /* Altura ideal ajustada para ver rostros y cuerpo completo */
-    max-height: 480px;
+    height: 60vh; /* Altura máxima para que no sobrepase el encabezado */
+    max-height: 430px;
     width: auto;
-    max-width: 300px;
+    max-width: 280px;
     object-fit: contain;
     filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
-    animation: floatSmooth 3.5s infinite ease-in-out alternate;
-}
-
-/* Animación de flotación limpia sin alterar la posición vertical */
-@keyframes floatSmooth {
-    0% {
-        opacity: 0.95;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 /* --- TARJETA PRINCIPAL --- */
@@ -126,13 +112,13 @@ body {
     position: relative;
 }
 
-/* 🧜‍♀️ TEMA ARIEL (CAMILA) */
+/* TEMA ARIEL (CAMILA) */
 .ariel-theme {
     background: linear-gradient(180deg, #cbe8ff 0%, #7dd3fc 50%, #0284c7 100%);
     border-bottom: 6px solid #a855f7;
 }
 
-/* 🌺 TEMA MOANA (REGINA) */
+/* TEMA MOANA (REGINA) */
 .moana-theme {
     background: linear-gradient(180deg, #fef08a 0%, #fdba74 50%, #ea580c 100%);
 }
@@ -144,7 +130,6 @@ body {
     align-items: center;
 }
 
-/* TEXTOS Y NOMBRADO */
 .name {
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
@@ -184,7 +169,6 @@ body {
 .badge-ariel { background: linear-gradient(135deg, #7e22ce, #a855f7); }
 .badge-moana { background: linear-gradient(135deg, #15803d, #22c55e); }
 
-/* CAJAS DE INFORMACIÓN TRANSPARENTES */
 .details-box {
     border-radius: 22px;
     padding: 20px;
@@ -216,7 +200,7 @@ body {
     margin-top: 10px;
 }
 
-/* --- SECCIÓN INFERIOR Y UBICACIÓN --- */
+/* UBICACIÓN Y BOTONES */
 .general-info {
     background: #ffffff;
     padding: 30px 20px;
@@ -246,7 +230,6 @@ body {
     margin: 4px 0;
 }
 
-/* --- BOTONES DE WHATSAPP --- */
 .buttons-container {
     display: flex;
     flex-direction: column;
@@ -298,7 +281,7 @@ body {
     transform: translateY(1px);
 }
 
-/* --- RESPONSIVO --- */
+/* MEDIA QUERIES */
 @media (min-width: 768px) {
     .invitation-split {
         flex-direction: row;
@@ -310,7 +293,6 @@ body {
     }
 }
 
-/* MOSTRAR EN MONITORES / LAPTOPS */
 @media (min-width: 1200px) {
     .side-character-3d {
         display: block;
